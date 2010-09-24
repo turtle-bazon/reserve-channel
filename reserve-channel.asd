@@ -6,7 +6,8 @@
   :licence "Lessor Lisp General Public License"
   :version "0.0.1.0"
   :description "Channel reserve (pinger script)"
-  :depends-on (external-program-extender)
+  :depends-on (split-sequence
+	       external-program-extender)
   :components ((:module "src"
 			:components
 			((:file "package")
