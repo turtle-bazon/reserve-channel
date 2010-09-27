@@ -103,7 +103,6 @@
   (loop for route in default-routes
      do (run/strings 
 	 "/sbin/route" `("del" "default" 
-			       "gw" ,(route-gateway route) 
 			       ,@(if (route-routed route)
 				     `("gw"  ,(route-gateway route))
 				     `("dev" ,(route-device route)))

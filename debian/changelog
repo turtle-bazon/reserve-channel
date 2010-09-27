@@ -1,3 +1,9 @@
+reserve-channel (0.0.1.0-5) unstable; urgency=low
+
+  * Deletion of default routes bug.
+
+ -- Azamat S. Kalimoulline <turtle@bazon.ru>  Mon, 27 Sep 2010 15:30:52 +0400
+
 reserve-channel (0.0.1.0-4) unstable; urgency=low
 
   * loop for... 
