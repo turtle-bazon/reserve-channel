@@ -1,3 +1,9 @@
+reserve-channel (0.0.1.0-2) unstable; urgency=low
+
+  * By default examples commented.
+
+ -- Azamat S. Kalimoulline <turtle@bazon.ru>  Mon, 27 Sep 2010 14:48:14 +0400
+
 reserve-channel (0.0.1.0-1) unstable; urgency=low
 
   * Initial debianization.
