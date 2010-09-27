@@ -73,7 +73,10 @@
        (= 1 (length 
 	     (grep (run/strings 
 		    "ping" 
-		    `("-c1" "-i0.05" ,(format nil "-I~a" device) ,test-host)) 
+		    `("-c1"
+		      "-i0.05"
+		      ,(format nil "-I~a" device)
+		      ,(test-host-hostname test-host))) 
 		   "time="))))
    test-hosts))
 

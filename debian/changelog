@@ -1,3 +1,9 @@
+reserve-channel (0.0.1.0-3) unstable; urgency=low
+
+  * Proper test-host value.
+
+ -- Azamat S. Kalimoulline <turtle@bazon.ru>  Mon, 27 Sep 2010 15:02:00 +0400
+
 reserve-channel (0.0.1.0-2) unstable; urgency=low
 
   * By default examples commented.
