@@ -1,0 +1,13 @@
+Source: reserve-channel
+Section: universe/devel
+Priority: optional
+Maintainer: Azamat S. Kalimoulline <turtle@bazon.ru>
+Build-Depends-Indep: dh-lisp
+Build-Depends: debhelper (>= 7.0.0)
+Standards-Version: 3.8.2.0
+
+Package: reserve-channel
+Architecture: all
+Depends: asdf, sbcl-daemon, clon, split-sequence, external-program-extender, iputils-ping, net-tools
+Description: Channel reserve (pinger script)
+

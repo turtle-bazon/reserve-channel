@@ -1,0 +1,52 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          reserve-channel
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: BACKUP Tool
+### END INIT INFO
+
+SBCL_DAEMON=/usr/share/common-lisp/source/sbcl-daemon/sbcl-daemon.lisp
+SBCL_OPTS="--noinform"
+DAEMON="reserve-channel"
+CONF="/etc/reserve-channel.daemon"
+
+export LC_ALL="ru_RU.UTF-8"
+
+start () {
+
+	echo -n "Starting $DAEMON server... "
+	sbcl $SBCL_OPTS --load $SBCL_DAEMON $CONF start	       
+	[ $? -eq 0 ] && echo "done." || echo "failed!"
+}
+
+nodaemon () {
+	sbcl $SBCL_OPTS --load $SBCL_DAEMON $CONF nodaemon
+}
+
+stop () {
+	echo -n "Stopping $DAEMON server... "
+	sbcl $SBCL_OPTS --load $SBCL_DAEMON $CONF kill
+	[ $? -eq 0 ] && echo "done." || echo "failed!"
+}
+
+restart () {
+	echo -n "Restarting $DAEMON server... "
+	sbcl $SBCL_OPTS --load $SBCL_DAEMON $CONF restart
+	[ $? -eq 0 ] && echo "done." || echo "failed!"
+}
+
+help () {
+	echo "Usage: $0 <start|stop|restart|nodaemon>"
+}
+
+case "$1" in
+    start) start ;;
+    stop) stop ;;
+    nodaemon) nodaemon ;;
+    restart) restart ;;
+    *) help ;;
+esac

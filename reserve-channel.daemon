@@ -1,0 +1,18 @@
+;;;; -*- mode: lisp -*-
+
+(with-output-to-string (*standard-output*)
+ (asdf:oos 'asdf:load-op 'reserve-channel)
+ (asdf:oos 'asdf:load-op 'clon))
+
+(defparameter *name* "reserve-channel")
+
+(defparameter *pidfile* #P"/var/run/reserve-channel.pid")
+
+(defparameter *start-program*
+  #'(lambda ()
+      (clon:schedule-function
+       #'(lambda ()
+	   (reserve-channel:check-channel "/etc/reserve-channel.conf"))
+       (clon:make-scheduler
+        (clon:make-typed-cron-schedule :minute '*))
+       :thread t)))

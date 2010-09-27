@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+invoke-rc.d reserve-channel stop > /dev/null
+update-rc.d -f reserve-channel remove > /dev/null
+rm -rf /var/run/reserve-channel.pid
+
+#DEBHELPER#

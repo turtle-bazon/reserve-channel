@@ -1,0 +1,3 @@
+reserve-channel.asd src usr/share/common-lisp/source/reserve-channel/
+reserve-channel.conf etc/
+reserve-channel.daemon etc/

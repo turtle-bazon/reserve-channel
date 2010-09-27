@@ -1,0 +1,5 @@
+reserve-channel (0.0.1.0-1) unstable; urgency=low
+
+  * Initial debianization.
+
+ -- Azamat S. Kalimoulline <turtle@bazon.ru>  Mon, 27 Sep 2010 11:36:55 +0400

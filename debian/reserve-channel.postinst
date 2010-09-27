@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+rm -rf /var/run/reserve-channel.pid
+update-rc.d reserve-channel defaults > /dev/null
+invoke-rc.d reserve-channel start > /dev/null
+
+#DEBHELPER#
