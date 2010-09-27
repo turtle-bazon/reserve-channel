@@ -90,8 +90,8 @@
 (defun default-routes ()
   (sort 
    (loop for route-line in (run/strings "/sbin/route" `("-n"))
-      with route-strings = (split-sequence #\Space
-					   route-line :remove-empty-subseqs t)
+      for route-strings = (split-sequence #\Space
+					  route-line :remove-empty-subseqs t)
       when (equal (car route-strings) "0.0.0.0")
       collect (make-route (elt route-strings 1)
 			  (elt route-strings 7)

@@ -1,3 +1,9 @@
+reserve-channel (0.0.1.0-4) unstable; urgency=low
+
+  * loop for... 
+
+ -- Azamat S. Kalimoulline <turtle@bazon.ru>  Mon, 27 Sep 2010 15:20:34 +0400
+
 reserve-channel (0.0.1.0-3) unstable; urgency=low
 
   * Proper test-host value.
