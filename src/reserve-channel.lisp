@@ -82,10 +82,12 @@
 
 (defun alive-channel (config)
   (find-if
-   #'(lambda (channel)
-       (let ((device (channel-interface channel)))
-	 (is-channel-alive device (config-test-hosts config))))
-   (config-channels config)))
+    #'(lambda (channel)
+        (let ((device (channel-interface channel)))
+          (is-channel-alive device (if (channel-routed channel)
+                                     (cons (channel-gateway channel) (config-test-hosts config))
+                                     (config-test-hosts config)))))
+    (config-channels config)))
 
 (defun default-routes ()
   (sort 
